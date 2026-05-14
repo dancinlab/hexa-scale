@@ -53,9 +53,10 @@
 
 @I id001 := "hexa-scale" :: identity-claim [d=2026-05-14 active]
   kind = "hexa-* standalone (18th in dancinlab family)"
+  brief = "multi-scale architecture · 6 scales × 4 phases = 24 = J₂(6) · 18th hexa-* family"
   axis = "multi-scale architecture"
   lattice = "6 scales × 4 phases = 24 cells; coincides numerically with σ(n)·φ(n) = n·τ(n) = J₂(6) = 24 at n=6 (three formulas, same value — see [@x1])"
-  parent = "dancinlab/echoes (discoveries catalog)"
+  parent = "dancinlab"
 
 @I id002 := "hexa-scale.scales" :: identity-claim [d=2026-05-14 active]
   <: id001
@@ -90,7 +91,6 @@
 
 @D g1 := "honest-caveat-first" :: governance [required]
   rule = "Every claim coupling the n=6 lattice to external phenomena ships with a one-line honest caveat: lattice is an organising tool, not a substitute for real math / physics / engineering / political-economy limits."
-  why = "echoes [@x1] §1.2/§1.3 + raw#10 [@x2] — overclaim destroys credibility downstream"
   applies-to <<~EOF
     Every section in README.md
     Every cell in SCALE.md
@@ -152,7 +152,6 @@
 
 @F f1 := "external-lattice-fit" :: governance [required deny:write]
   pattern = "n=6 / σφτ identity applied as derivation rule to NASA · SpaceX · IPCC · IBC · constitutional bodies · CERN · DeepMind"
-  why = "raw#10 [@x2] — external entities use their own published invariants (Stefan-Boltzmann · c · ℏ · k · Carnot · ASML throughput · ERCOT capacity)"
   exception = "values may coincidentally match (e.g. 6 = 6 in some external standard) — observation OK, derivation NOT OK"
 
 @F f2 := "implementation-before-ssot" :: governance [required deny:write]
@@ -164,9 +163,7 @@
 
 @X x1 := "echoes/LATTICE_POLICY.md" :: policy [d=2026-05-13 active]
   url = "https://github.com/dancinlab/echoes/blob/main/LATTICE_POLICY.md"
-  scope = "n=6 lattice usage governance · external-entity ban · raw#10 C3 origin"
 
-@X x2 := "echoes raw#10 C3" :: governance-decision [d=2026-04-21 active]
   url = "https://github.com/dancinlab/echoes"
   scope = "honest-caveat policy origin · forbidden lattice-fit on external entities"
 
