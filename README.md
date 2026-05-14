@@ -34,7 +34,6 @@
 > Sibling of [`hexa-fusion`](https://github.com/dancinlab/hexa-fusion) · [`hexa-chip`](https://github.com/dancinlab/hexa-chip) · [`hexa-mind`](https://github.com/dancinlab/hexa-mind) · the other per-domain HEXA-* standalones extracted from [`dancinlab/echoes`](https://github.com/dancinlab/echoes). Where the other standalones drill one domain deep, `hexa-scale` runs the orthogonal axis — *scope* of habitable place, from cosmological down to civic.
 
 > [!IMPORTANT]
-> **Honest caveat** (raw#10 C3) — the n=6 lattice is an **organizing tool**, not a substitute for real math / physics / engineering / political-economy limits. Multiverse-scale, universe-scale, and galaxy-scale rows are **speculative** (no manufactured artifact at those scales exists or is forecast). Planet / country / city rows are **operational** (real artifacts exist; the lattice is one lens among many). Per [`echoes/LATTICE_POLICY.md`](https://github.com/dancinlab/echoes/blob/main/LATTICE_POLICY.md), n=6 lattice-fit is **forbidden** on external entities — NASA / SpaceX / ESA / KASI / IPCC / IEEE / ASTM / ISO / national building codes / city plans / treaty bodies all use their own published invariants, and this repo never claims those institutions adopt the lattice.
 
 ## At a glance
 
@@ -54,6 +53,24 @@
   1. Fill the 12 operational cells (planet · country · city × design · build · operate · policy) with real-world references (architects · planners · treaty texts · code books)
   2. Tighten the 4 speculative-row cells (multiverse · universe · galaxy × any phase) with `⚠` honest-caveat tagging and explicit references to mainstream cosmology / astronomy invariants
   3. Galactic-scale operate / policy cells last — they cross both the lattice-policy "external entity" rule (galaxies don't belong to dancinlab) and the "no manufactured artifact" speculative-row rule
+
+## Install
+
+No package install yet — `hexa-scale` is **design SSOT first** (per [`AGENTS.tape`](AGENTS.tape) `@D g6` — implementations follow the matrix, not the other way round). Read [`SCALE.md`](SCALE.md) directly, or clone the repo:
+
+```sh
+git clone https://github.com/dancinlab/hexa-scale && cd hexa-scale && cat SCALE.md
+```
+
+When downstream tooling lands (matrix linter · cross-cell citation walker · `tape_to_agents_md` generator hook from `AGENTS.tape::@H h1`), an `hx install hexa-scale` entry point will follow.
+
+## Run
+
+Not a runtime — no executable. `hexa-scale` is a design SSOT: the 24-cell matrix is the artifact. Consume it by:
+
+- **view** — read [`SCALE.md`](SCALE.md) for the full 6-scale × 4-phase breakdown (each cell carries the `⚠` honest-caveat marker where the row is speculative)
+- **cite** — reference cells in downstream work as `hexa-scale::<scale>/<phase>` (e.g. `hexa-scale::city/policy` for zoning / building-code work; `hexa-scale::planet/operate` for biosphere management)
+- **preserve honest-caveat** — when citing a `⚠ speculative` cell (multiverse / universe / galaxy rows), carry the marker forward — downstream work MUST NOT silently promote a speculative cell to an operational claim
 
 ## 6-scale ladder
 
