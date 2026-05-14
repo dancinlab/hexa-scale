@@ -80,15 +80,17 @@
 ```
 hexa-scale/
 ├── README.md                ← this file (18-block format)
+├── AGENTS.tape              ← sole agent-harness + governance + identity (.tape v1.2)
+├── CLAUDE.md  → AGENTS.tape ← symlink (Claude Code auto-discovery)
 ├── SCALE.md                 ← 24-cell matrix domain ledger (the SSOT)
-├── SEED.tape                ← sole agent-harness + governance + handoff (.tape v1.1)
+├── SEED.tape                ← runtime handoff (open decisions · anomalies · planned · log)
 ├── LICENSE                  ← MIT
 └── docs/
     └── logo.svg             ← 6 nested flat-top hexagons (multiverse → city)
 ```
 
 > [!NOTE]
-> Project governance / AI-agent harness lives in [`SEED.tape`](SEED.tape) (§0 `g1..g9` entries), not in a separate `AGENTS.md`. This is by design per governance principle #9b `tape-runtime-trace` — `.tape` is the dancinlab grammar for agent identity + governance + per-domain history. Trade-off: agents.md ecosystem tooling (Claude Code · Aider · Cursor) loses auto-discovery of project context for this repo; a future generator can re-emit `AGENTS.md` from `SEED.tape §0` if needed.
+> Project governance / AI-agent harness lives in [`AGENTS.tape`](AGENTS.tape) (`.tape` v1.2 grammar — §1 `@V` spec · §2 `@I` identity · §3 `@L` layout · §4 `@D g1..g9` governance · §5 `@F f1..f2` forbidden · §6 `@X x1..x5` citations · §7 `@N` notes · §8 `@H` generator hooks), not in a separate `AGENTS.md`. The file's top ~35 lines are a self-describing grammar primer comment block, so any LLM cold-reading it (via `CLAUDE.md` symlink discovery) can parse the rest. Runtime handoff (decisions in flight · anomalies · planned actions) lives in [`SEED.tape`](SEED.tape), separated by purpose. Trade-off documented in `AGENTS.tape::g9`: agents.md ecosystem tooling that doesn't speak `.tape` yet can fall back to a generated `AGENTS.md` via `@H h1` (`tape_to_agents_md`).
 
 ## License
 
