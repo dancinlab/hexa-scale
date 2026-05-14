@@ -5,7 +5,7 @@
 
 ## What hexa-scale is
 
-The 18th `hexa-*` standalone in the dancinlab family — **multi-scale architecture** lattice. Six scales (multiverse → universe → galaxy → planet → country → city) crossed with four lifecycle phases (design → build → operate → policy) yielding `6 × 4 = 24 = J₂(6)` cells. SCALE.md is the SSOT; this repo is design-first, implementations follow.
+The 18th `hexa-*` standalone in the dancinlab family — **multi-scale architecture** lattice. Six scales (multiverse → universe → galaxy → planet → country → city) crossed with four lifecycle phases (design → build → operate → policy) yielding `6 × 4 = 24` cells. The cell count numerically coincides with the central n=6 identity `σ·φ = n·τ = 24` and with the Jordan totient `J₂(6) = 24`. SCALE.md is the SSOT; this repo is design-first, implementations follow.
 
 ## Repo layout
 

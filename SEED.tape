@@ -16,7 +16,7 @@
 @I id001 := "hexa-scale" :: identity-claim [d=2026-05-14 ok]
   kind   = "hexa-* standalone (18th in dancinlab family)"
   axis   = "multi-scale architecture"
-  lattice = "6 scales × 4 phases = 24 = J₂(6) = σ(6)·τ(6)"
+  lattice = "6 scales × 4 phases = 24 cells; coincides numerically with σ(n)·φ(n) = n·τ(n) = J₂(6) = 24 at n=6 (three formulas, same value)"
   parent = "dancinlab/echoes (discoveries catalog)"
   policy = "echoes/LATTICE_POLICY.md governs lattice-fit rules"
 

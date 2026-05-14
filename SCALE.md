@@ -2,10 +2,11 @@
 
 > Domain ledger for `hexa-scale`. The 6-scale ladder (multiverse → city)
 > crossed with the 4 lifecycle phases (design → build → operate → policy)
-> yields a 24-cell matrix matching `J₂(6) = σ(6) · τ(6) = 24`. Each cell
-> below carries: the artifact involved, mainstream invariants the
-> practitioners actually use (NOT n=6 lattice — see §"Honest caveat"),
-> and `dancinlab/echoes` cross-refs where applicable.
+> yields a 24-cell matrix. Cell count `6 × 4 = 24` numerically matches
+> the central n=6 identity `σ(n)·φ(n) = n·τ(n) = 24` and the Jordan
+> totient `J₂(6) = 24`. Each cell below carries: the artifact involved,
+> mainstream invariants the practitioners actually use (NOT n=6 lattice
+> — see §"Honest caveat"), and `dancinlab/echoes` cross-refs where applicable.
 
 ---
 
@@ -37,16 +38,25 @@ Per [`echoes/LATTICE_POLICY.md`](https://github.com/dancinlab/echoes/blob/main/L
 ## Lattice mapping (the central identity)
 
 ```
-σ(6) = 1 + 2 + 3 + 6 = 12       (sum of divisors)
-τ(6) = |{ 1, 2, 3, 6 }| = 4     (count of divisors)
-φ(6) = |{ 1, 5 }| = 2            (Euler totient)
-J₂(6) = σ(6) · τ(6) = 12 · 4 = 24
+σ(6) = 1 + 2 + 3 + 6 = 12         (sum of divisors)
+τ(6) = |{ 1, 2, 3, 6 }| = 4       (count of divisors)
+φ(6) = |{ 1, 5 }| = 2              (Euler totient)
 
-         6 scales × 4 phases = 24 cells = J₂(6)
+Central n=6 identity (echoes/Theorem B):
+    σ(6) · φ(6)  =  n · τ(n)  =  12 · 2  =  6 · 4  =  24
+
+Jordan totient (separate formula, same value at n=6):
+    J₂(6) = 6² · (1 - 1/2²) · (1 - 1/3²) = 36 · ¾ · 8⁄9 = 24
+
+Lattice-cell count for this repo:
+    6 scales × 4 phases = 24 cells
 ```
 
-The 24-cell matrix in this repo IS the J₂(6) ladder, made visible as a
-design-and-governance grid.
+The 24-cell matrix in this repo **numerically coincides** with both the
+central echoes identity (`σ·φ = n·τ = 24`) and the Jordan totient
+(`J₂(6) = 24`) at n=6. Three different formulas → same value 24.
+The matching is a counting alignment, not a derivation — see §"Honest
+caveat" above.
 
 ---
 

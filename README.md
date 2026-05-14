@@ -19,7 +19,7 @@
 
 ---
 
-`hexa-scale` is the **multi-scale architecture** standalone in the dancinlab HEXA-* family. One lattice spans six magnitudes of habitable scale — multiverse → universe → galaxy → planet → country → city — crossed with four lifecycle phases — design → build → operate → policy. The result is a 6 × 4 = 24-cell matrix matching `J₂(6) = σ(6) · τ(6) = 24` exactly.
+`hexa-scale` is the **multi-scale architecture** standalone in the dancinlab HEXA-* family. One lattice spans six magnitudes of habitable scale — multiverse → universe → galaxy → planet → country → city — crossed with four lifecycle phases — design → build → operate → policy. The result is a 6 × 4 = 24-cell matrix, numerically matching the central n=6 identity `σ(n)·φ(n) = n·τ(n) = 24` (and the Jordan totient `J₂(6) = 24`) at n=6.
 
 ```
     ↕ phase \ scale →   multiverse   universe   galaxy   planet   country   city
