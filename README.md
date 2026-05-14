@@ -79,13 +79,16 @@
 
 ```
 hexa-scale/
-├── README.md                ← this file
+├── README.md                ← this file (18-block format)
 ├── SCALE.md                 ← 24-cell matrix domain ledger (the SSOT)
-├── AGENTS.md                ← project governance / AI-agent harness file
+├── SEED.tape                ← sole agent-harness + governance + handoff (.tape v1.1)
 ├── LICENSE                  ← MIT
 └── docs/
-    └── logo.svg             ← 6 nested hexagons (multiverse → city)
+    └── logo.svg             ← 6 nested flat-top hexagons (multiverse → city)
 ```
+
+> [!NOTE]
+> Project governance / AI-agent harness lives in [`SEED.tape`](SEED.tape) (§0 `g1..g9` entries), not in a separate `AGENTS.md`. This is by design per governance principle #9b `tape-runtime-trace` — `.tape` is the dancinlab grammar for agent identity + governance + per-domain history. Trade-off: agents.md ecosystem tooling (Claude Code · Aider · Cursor) loses auto-discovery of project context for this repo; a future generator can re-emit `AGENTS.md` from `SEED.tape §0` if needed.
 
 ## License
 

@@ -1,15 +1,58 @@
 #!/usr/bin/env tape
 # ══════════════════════════════════════════════════════════════
-# hexa-scale — SEED tape (handoff to next session)
+# hexa-scale — SEED tape
 #
-# Purpose: a new session opens this file first and has the full
-# picture in <60 lines — what was bootstrapped, what's settled,
-# what decisions are open, what to do next. Append-only `.tape`
-# v1.1, runnable by `tape replay SEED.tape` to walk the state.
+# Sole agent-harness + handoff file for this repo. AGENTS.md was
+# folded in here on 2026-05-14 (per user decision — see §0 g8).
+# `.tape` v1.1 grammar; runnable by `tape replay SEED.tape`.
 #
-# Companion: README.md (human intro) · SCALE.md (24-cell SSOT)
-# · AGENTS.md (project governance).
+# Companion files: README.md (human intro) · SCALE.md (24-cell SSOT).
 # ══════════════════════════════════════════════════════════════
+
+# ─── §0 Governance / conventions (absorbed AGENTS.md) ──────────
+
+@D g1 := "honest-caveat-first" :: governance [d=2026-05-14 ok]
+  rule = "Every claim coupling the n=6 lattice to an external phenomenon ships with a one-line honest caveat: lattice is an organising tool, not a substitute for real math / physics / engineering / political-economy limits."
+  why  = "echoes/LATTICE_POLICY.md §1.2/§1.3 + raw#10 C3 — overclaim destroys credibility downstream"
+  apply = "every section in README.md, every cell in SCALE.md, every entry in SEED.tape that mentions n=6 vs an external entity"
+
+@D g2 := "speculative-vs-operational-split" :: governance [d=2026-05-14 ok]
+  rule = "Rows 1–3 (multiverse · universe · galaxy) carry ⚠ speculative tags + explicit 'no manufactured artifact' disclaimers. Rows 4–6 (planet · country · city) are operational — real artifacts exist; lattice is one lens among many."
+  why  = "Honesty about which rows have ground truth and which are research-hypothesis placeholders"
+  apply = "SCALE.md §A / §C row tagging; README at-a-glance table; any future per-cell expansion"
+
+@D g3 := "cite-real-practitioners" :: governance [d=2026-05-14 ok]
+  rule = "Cells in rows 4–6 must cite real architects · planners · treaty texts · code books (Le Corbusier · Howard · Niemeyer · IBC · ISO 37120 · IPCC · UNFCCC · Rockström)."
+  forbid = "claiming any external party adopts the n=6 lattice — they use their own published invariants"
+  why = "echoes/LATTICE_POLICY raw#10 C3 — external-entity lattice-fit ban"
+
+@D g4 := "18-block-readme-format" :: governance [d=2026-05-14 ok]
+  rule = "README.md follows the canonical 18-block convention fixed in atlas/README-FORMAT.md."
+  required = "blocks 1–7 + 8 (NOTE) + 12 (IMPORTANT honest-caveat) + 17 (layout) + 18 (license)"
+  why = "Cross-repo consistency across dancinlab; auto-discoverable by tooling"
+
+@D g5 := "tape-runtime-trace" :: governance [d=2026-05-14 ok]
+  rule = "Runtime trace + agent identity + per-domain history use the `.tape` grammar (governance principle #9b)."
+  apply = "SEED.tape is the SSOT for this repo's project-rules AND event stream; markdown reserved for human-prose docs (README · SCALE)"
+  why = "Append-only event semantics fit governance / handoff use; tables fit prose use — separated by grammar fit"
+
+@D g6 := "design-ssot-first" :: governance [d=2026-05-14 ok]
+  rule = "hexa-scale is design SSOT first. Implementations (code · tools · datasets) come AFTER SCALE.md cells are filled with real references."
+  threshold = "ship `tools/` or `lean4/` directories only after each of the 12 operational cells (planet · country · city × 4 phases) has ≥1 mainstream-invariant citation"
+
+@D g7 := "cross-refs-one-way" :: governance [d=2026-05-14 ok]
+  rule = "Cross-references to dancinlab/echoes are one-way — hexa-scale cites echoes/LATTICE_POLICY.md and LIMIT_BREAKTHROUGH.md, but echoes doesn't structurally depend on hexa-scale."
+  apply = "echoes/README.md mentions hexa-scale as the 18th family in a one-line row — no shared modules, no shared schemas"
+
+@D g8 := "ssot-lock-lattice-policy" :: governance [d=2026-05-14 ok]
+  rule = "LATTICE_POLICY decisions live in dancinlab/echoes, never re-declared here."
+  apply = "If a cell needs a new policy clause, propose it in echoes first, then cite the new clause from hexa-scale"
+
+@D g9 := "agents-md-folded-into-seed" :: governance [d=2026-05-14 ok]
+  rule = "AGENTS.md / CLAUDE.md were removed 2026-05-14; this SEED.tape is the sole agent-harness + governance file."
+  cost = "agents.md ecosystem tooling (Claude Code · Aider · Cursor) loses auto-discovery of project context from THIS repo"
+  benefit = "single SSOT in tape-native grammar; aligns with governance #9b"
+  fallback = "if a future tool needs markdown agent-harness reading, re-emit AGENTS.md from this SEED.tape's §0 entries via a generator"
 
 # ─── §1 Identity ───────────────────────────────────────────────
 
@@ -46,11 +89,12 @@
   sections = "§A scales (A1..A6) · §B phases (B1..B4) · §C 24-cell matrix (C1..C6) · §D cross-refs · §E log"
   state  = "scaffold complete; 12 operational cells each carry 1-3 references; 12 speculative cells carry ⚠ tags + 'no manufactured artifact' disclaimers"
 
-@P p003 := "AGENTS.md" :: produces [d=2026-05-14 ok]
-  governs = "honest-caveat-first · speculative-vs-operational split · cite real practitioners · 18-block README format · append-only tape for trace"
+@P p003 := "SEED.tape (this file)" :: produces [d=2026-05-14 ok]
+  role = "sole agent-harness + governance + handoff (AGENTS.md folded in)"
+  sections = "§0 Governance (g1..g9) · §1 Identity (id001..id004) · §2 Produces (p001..p005) · §3 Open decisions (d1..d6) · §4 Anomalies (q1..q4) · §5 Planned (t1..t6) · §6 Log"
 
 @P p004 := "docs/logo.svg" :: produces [d=2026-05-14 ok]
-  signature = "6 nested hexagons (multiverse → city) with σφτ centre node"
+  signature = "6 nested flat-top hexagons (multiverse → city) with σφτ centre node; width:height = 2:√3 ≈ 1.155"
 
 @P p005 := "LICENSE" :: produces [d=2026-05-14 ok]
   spdx = "MIT"
@@ -72,11 +116,6 @@
   options = "(a) inline (Author Year)   (b) end-of-cell footnotes   (c) separate REFERENCES.md   (d) BibTeX in docs/references.bib"
   default = "(a) inline + (d) docs/references.bib parallel; build reads (d) and cross-checks (a)"
 
-@D d4 := "echoes-18th-family-link" :: decision [d=2026-05-14 ?]
-  text = "How prominent should the hexa-scale row be in echoes/README.md?"
-  options = "(a) one-line row in existing 17-family table   (b) new ## §18 hexa-scale section with overview table   (c) skip — let RETIRED.md / link from logo cluster do the discovery"
-  default = "(a) one-line — match the 17-family treatment exactly"
-
 @D d5 := "smallest-scale" :: decision [d=2026-05-14 ?]
   text = "Is 'city' really the smallest scale, or should a 7th be added (district / building / room)?"
   constraint = "n=6 strictly limits to 6 scales — adding a 7th breaks the J₂(6) lattice mapping"
@@ -97,14 +136,14 @@
 
 @? q2 := "ci-workflow" :: anomaly [d=2026-05-14 ?]
   text = "GitHub Actions for tape-canonical / domain-convention / link-check?"
-  current = "none yet — `wilson/.github/workflows/lint.yml` is the precedent to copy"
+  current = "none yet — wilson/.github/workflows/lint.yml is the precedent to copy"
 
-@? q3 := "wilson-domain-list-integration" :: anomaly [d=2026-05-14 ?]
+@? q3 := "wilson-domain-list-cwd-aware" :: anomaly [d=2026-05-14 !]
   text = "Does SCALE.md show up under `wilson domain list`?"
-  expected = "yes — SCALE.md matches the UPPERCASE.md filename regex; governance principle #4 should auto-pick it up"
-  verify-step = "run `wilson domain list` after first commit and confirm SCALE appears in the inventory"
+  result = "NO — wilson's `domain list` reads $WILSON_ROOT (~/core/wilson/TAPE.md), not cwd"
+  resolution = "This is a wilson limitation, not a hexa-scale issue. File as wilson backlog: cwd-aware `domain list` OR `--cwd` flag"
 
-@? q4 := "speculative-row-policy-cell-emptiness" :: anomaly [d=2026-05-14 ?]
+@? q4 := "speculative-row-policy-cell-emptiness" :: anomaly [d=2026-05-14 ok]
   text = "Cells (1,4) and (2,4) — multiverse · policy, universe · policy — are empty by definition (no policy bodies exist at these scales)"
   current = "marked 'None' in §C1/C2 of SCALE.md"
   resolution = "leave as 'None'; that IS the honest answer, not a gap to fill"
@@ -127,16 +166,21 @@
   <- p001, q2
   intent = "Copy wilson/.github/workflows/lint.yml pattern → tape-canonical + domain-convention + link-check jobs"
 
-@T t5 plan := "echoes-cross-link" :: planned [d=2026-05-14 N5]
-  <- p001, d4
-  intent = "Add `hexa-scale` as 18th family in echoes/README.md (one-line row per d4 default)"
-
-@T t6 plan := "wilson-domain-verify" :: planned [d=2026-05-14 N6]
-  <- p002, q3
-  intent = "Run `wilson domain list` from ~/core/hexa-scale; confirm SCALE appears in inventory"
-
 # ─── §6 Log ────────────────────────────────────────────────────
 
-@A bootstrap_2026_05_14 :: handoff [d=2026-05-14 ok]
+@A bootstrap_2026_05_14 := "bootstrap" :: handoff [d=2026-05-14 ok]
   <- id001, id002, id003, id004, p001, p002, p003, p004, p005
-  => "Bootstrap complete. 5 artifacts on disk. 6 open decisions (d1..d6). 4 anomalies (q1..q4). 6 planned actions (t1..t6) in dependency order. New session: open this SEED.tape first, then SCALE.md, then start with t1 (fill-planet-row)."
+  => "Bootstrap complete. 5 artifacts on disk. 9 governance entries (g1..g9), 5 open decisions (d1..d6 minus d4), 4 anomalies (q1..q4), 4 planned actions (t1..t4). Next session: open this SEED.tape first, then SCALE.md, start with t1 (fill-planet-row)."
+
+@A t5_done_2026_05_14 := "echoes-cross-link done" :: log [d=2026-05-14 ok]
+  <- bootstrap_2026_05_14
+  => "echoes/README.md commit 89a0f08ab added hexa-scale as the 18th primary family between Aerospace and HEXA-UFO. d4 closed."
+
+@A t6_done_2026_05_14 := "wilson-domain-verify done" :: log [d=2026-05-14 !]
+  <- bootstrap_2026_05_14, q3
+  => "Ran `wilson domain list` from ~/core/hexa-scale; only TAPE.md (from $WILSON_ROOT) listed. SCALE.md not picked up. Resolution: wilson cwd-aware limitation, not a hexa-scale fix — escalated to q3."
+
+@A agents_md_merged_2026_05_14 := "AGENTS.md folded into SEED.tape" :: log [d=2026-05-14 ok]
+  <- g9
+  ~> p003   # supersedes old p003 'AGENTS.md' produces entry
+  => "AGENTS.md + CLAUDE.md (symlink) removed. SEED.tape §0 now carries g1..g9 governance entries that previously lived as AGENTS.md prose. README.md repo layout table updated to drop the AGENTS.md row."
